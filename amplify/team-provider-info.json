@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-amplifyprojectv2-dev-222207-unauthRole",
       "StackName": "amplify-amplifyprojectv2-dev-222207",
       "StackId": "arn:aws:cloudformation:eu-north-1:114358219886:stack/amplify-amplifyprojectv2-dev-222207/e99b7b10-394d-11ee-bd0f-0ab37f166ce2",
-      "AmplifyAppId": "d6tm8ucok8cty"
+      "AmplifyAppId": "d6tm8ucok8cty",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-amplifyprojectv2-dev-222207-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "hosting": {
@@ -20,6 +21,23 @@
       },
       "auth": {
         "amplifyprojectv2484695e8": {}
+      },
+      "function": {
+        "addPlaces": {
+          "deploymentBucketName": "amplify-amplifyprojectv2-dev-222207-deployment",
+          "s3Key": "amplify-builds/addPlaces-61567948664b447a7749-build.zip"
+        },
+        "getPlaces": {
+          "deploymentBucketName": "amplify-amplifyprojectv2-dev-222207-deployment",
+          "s3Key": "amplify-builds/getPlaces-7262467a567746306970-build.zip"
+        }
+      },
+      "storage": {
+        "s3f7e1a2f6": {},
+        "dynamo554c1fb2": {}
+      },
+      "api": {
+        "api64dac92c": {}
       }
     }
   }

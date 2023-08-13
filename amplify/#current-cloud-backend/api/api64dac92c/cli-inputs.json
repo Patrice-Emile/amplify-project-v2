@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "paths": {
+    "/getPlaces": {
+      "name": "/getPlaces",
+      "lambdaFunction": "getPlaces",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/addPlaces": {
+      "name": "/addPlaces",
+      "lambdaFunction": "addPlaces",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
