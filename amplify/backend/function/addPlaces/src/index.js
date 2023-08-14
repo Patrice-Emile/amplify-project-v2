@@ -21,6 +21,7 @@ exports.handler = async (event) => {
       rating,
     },
   };
+
   try {
     await dynamodb.put(params).promise();
     return {

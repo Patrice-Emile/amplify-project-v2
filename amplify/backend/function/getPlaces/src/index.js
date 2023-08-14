@@ -5,7 +5,7 @@ const AWS = require("aws-sdk");
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = async (event) => {
-  // const { email } = JSON.parse(event.body);
+  const email = event.queryStringParameters.email; // Assuming the parameter name is 'fieldValue'
   const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "*",
@@ -19,7 +19,7 @@ exports.handler = async (event) => {
         "#email": "email", // Replace 'fieldName' with your actual field name
       },
       ExpressionAttributeValues: {
-        // ":email": email,
+        ":email": email,
       },
     };
 

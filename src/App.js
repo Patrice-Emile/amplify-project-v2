@@ -40,11 +40,12 @@ function App({ signOut, user }) {
     }
   };
 
-  const fetchPlaces = async () => {
+  const fetchPlaces = async (email) => {
     try {
-      const response = await API.get("api64dac92c", "/getPlaces", {
-        body: user.attributes.email,
-      });
+      const response = await API.get(
+        "api64dac92c",
+        "/getPlaces?email=${email}"
+      );
       setPlaces(response);
     } catch (error) {
       console.log("Error fetching places:", error);
@@ -52,11 +53,13 @@ function App({ signOut, user }) {
   };
 
   useEffect(() => {
-    fetchPlaces();
+    if (user) {
+      fetchPlaces(user.attributes.email);
+    }
   }, []);
 
   return (
-    <>
+    <div style={styles.app}>
       <div style={styles.header}>
         <Heading level={1}>Hello {user.attributes.email}</Heading>
         <Button onClick={signOut} style={styles.button}>
@@ -118,16 +121,21 @@ function App({ signOut, user }) {
       <div style={styles.container}>
         <UploadFile styles={styles} />
       </div>
-    </>
+    </div>
   );
 }
 const styles = {
+  app: {
+    margin: 0,
+    backgroundColor: "grey",
+    color: "white",
+  },
   header: {
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
+    backgroundColor: "#A9A9A9",
   },
-
   container: {
     width: 400,
     margin: "0 auto",
